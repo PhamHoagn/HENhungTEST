@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "HIL Robocar",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-l298n", "id": "driver", "top": 180, "left": 20, "attrs": {} },
+    { "type": "wokwi-dc-motor", "id": "leftMotor", "top": 330, "left": -40, "attrs": {} },
+    { "type": "wokwi-dc-motor", "id": "rightMotor", "top": 330, "left": 120, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:25", "driver:ENA", "green", [ "v0" ] ],
+    [ "esp:26", "driver:IN1", "green", [ "v0" ] ],
+    [ "esp:27", "driver:ENB", "green", [ "v0" ] ],
+    [ "esp:14", "driver:IN3", "green", [ "v0" ] ],
+    [ "driver:OUT1", "leftMotor:1", "red", [ "v0" ] ],
+    [ "driver:OUT2", "leftMotor:2", "black", [ "v0" ] ],
+    [ "driver:OUT3", "rightMotor:1", "red", [ "v0" ] ],
+    [ "driver:OUT4", "rightMotor:2", "black", [ "v0" ] ],
+    [ "esp:GND.1", "driver:GND", "black", [ "v0" ] ],
+    [ "esp:5V", "driver:5V", "red", [ "v0" ] ]
+  ]
+}
